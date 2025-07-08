@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      async
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <title>Item Lister</title>
+  </head>
+  <body class="bg-gray-100">
+    <header
+      id="header"
+      class="sticky h-16 min-h-full bg-emerald-500 py-4"
+      role="banner"
+    >
+      <div class="w-2/4 mx-auto">
+        <h1 class="text-3xl text-neutral-50" tabindex="0">Item Lister</h1>
+      </div>
+    </header>
+    <main
+      id="main-container"
+      class="w-2/4 mx-auto my-4 p-4 border border-neutral-200"
+      role="main"
+    >
+      <form
+        id="item-form"
+        class="mb-4"
+        aria-labelledby="add-item-heading"
+        autocomplete="off"
+        onsubmit="event.preventDefault();"
+      >
+        <h2 id="add-item-heading" class="text-2xl text-gray-700 mb-4">
+          Add Item
+        </h2>
+        <label for="item-input" class="sr-only">Item name</label>
+        <input
+          type="text"
+          id="item-input"
+          name="item"
+          class="p-1 bg-neutral-50 border border-neutral-200 rounded-md"
+          placeholder="Add Item"
+          aria-label="Item name"
+          autocomplete="off"
+          required
+        />
+        <button
+          type="submit"
+          id="submit-btn"
+          class="py-1 px-2 bg-emerald-500 text-neutral-50 text-l rounded-sm ml-2 hover:cursor-pointer"
+          aria-label="Submit new item"
+        >
+          Submit
+        </button>
+      </form>
+      <section id="items-container" aria-labelledby="items-heading">
+        <h2 id="items-heading" class="text-2xl text-gray-700 mb-4">Items</h2>
+        <ul id="list-item-container" role="list" aria-live="polite">
+          <!--Items -->
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
